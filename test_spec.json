@@ -1,0 +1,95 @@
+{
+  "swagger": "2.0",
+  "paths": {
+    "/students/stranger": {
+      "get": {
+        "summary": "/students/stranger",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "example": "hello stranger"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Student"
+        ],
+        "produces": [
+          "application/json"
+        ]
+      }
+    },
+    "/students/{name}": {
+      "get": {
+        "summary": "/students/{name}",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "description": "description of a parameter"
+          }
+        ],
+        "responses": {},
+        "tags": [
+          "Student"
+        ]
+      }
+    },
+    "/gzip": {
+      "get": {
+        "summary": "/gzip",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {},
+        "tags": []
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Student"
+    }
+  ],
+  "definitions": {
+    "Student": {
+      "title": "Student",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "_id": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "info": {
+    "title": "poc-express-oas-generator",
+    "version": "0.0.0",
+    "description": "Specification JSONs: [v2](/api-spec/v2), [v3](/api-spec/v3)."
+  },
+  "schemes": [
+    "http"
+  ],
+  "host": "localhost:8080"
+}
